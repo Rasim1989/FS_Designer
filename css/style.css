@@ -14,9 +14,21 @@ body {
 	background-color: #fff;
     line-height: 19px;
     font-size: 1.4rem;
+    min-width: 320px
 }
 
 h1 {
+	font-family: Roboto Slab;
+	font-weight: bold;
+	font-size: 5rem;
+	line-height: 73px;
+	letter-spacing: 0.34em;
+	text-transform: uppercase;
+	color: #fff;
+	margin-bottom: 0;
+}
+	
+h2 {
 	font-family: Roboto Slab;
 	font-weight: bold;
 	font-size: 5rem;
@@ -27,7 +39,7 @@ h1 {
 	margin-bottom: 20px;
 }
 
-h2 {
+h3 {
 	font-weight: bold;
 	font-size: 2rem;
 	line-height: 27px;
@@ -36,7 +48,7 @@ h2 {
 	margin: 10px 0;
 }
 
-h3 {
+h4 {
 	font-weight: bold;
 	font-size: 2rem;
 	line-height: 26px;
@@ -52,8 +64,17 @@ header {
 	align-items: center;
 	background: url(../img/header_image.jpg) no-repeat center;
 	background-size: cover;
-	height: 744px;
 	color: #fff;
+	padding-top: 2.5%;
+}
+
+.image {
+	display: inline-block;
+	margin: 8px;
+}
+
+figcaption {
+	text-align: left;
 }
 
 .header_menu {
@@ -61,37 +82,77 @@ header {
 	justify-content: space-between;
 	max-width: 1140px;
 	width: 90%;
-	margin-top: 2.5%;
+	margin-bottom: 6.5%;
 }
 
 .burger {
 	height: 25px;
 	width: 77px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 }
 
-.burger span {
+.burger_top {
     background-color: #FD553A;
     height: 5px;
-    width: 100%;
+    width: 77px;
+    position: absolute;
 }
 
-.burger:hover span {
+.burger_top::before {
+	content: " ";
+	background-color: #FD553A;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.burger_top::after {
+	content: " ";
+	background-color: #FD553A;
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    margin-top: 20px;
+}
+
+.burger:hover {
 	background-color: #008CFF;
 	transition: all 0.1s ease-out;
 }
 
 .header_icons {
-	width: 121px;
 	display: flex;
 	justify-content: space-between;
+}
+
+.header_icons a {
+	margin-left: 24px;
+}
+
+.menu_search {
+	width: 24px;
+	height: 24px;
+	background: url(../img/search.png) no-repeat center; 
+}
+
+.menu_calendar {
+	width: 25px;
+	height: 24px;
+	background: url(../img/calendar.png) no-repeat center; 
+}
+
+.menu_profile {
+	width: 24px;
+	height: 24px;
+	background: url(../img/profile.png) no-repeat center; 
 }
 
 .main_text_wrapper {
 	max-width: 1140px;
 	width: 90%;
+	display: flex;
+	justify-content: flex-end;
+	margin-bottom: 233px;
 }
 
 .main_text {
@@ -100,24 +161,22 @@ header {
 	justify-content: space-between;
 	text-align: center;
 	align-items: center;
-	margin-bottom: 233px;
-	float: right;
 	font-size: 1.8rem;
 	line-height: 26px;
 }
 
 .main_text > * {
-	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .main_text span {
 	font-style: italic;
 }
 
-.main_text h1 {
+.main_text h1 span {
+	font-style: normal;
+	letter-spacing: 0em;
 	color: #fff;
-	margin-right: -17px;
-	margin-bottom: 0;
 }
 
 .show_bill_btn {
@@ -148,7 +207,7 @@ main {
 	align-items: center;
 }
 
-article {
+section {
 	margin-top: 128px;
 	display: flex;
 	flex-direction: column;
@@ -212,6 +271,12 @@ article {
 }
 
 .tools_btn_rght:hover {
+  color: #FD553A;
+}
+
+.tools_btn_rght:hover:after {
+	border-top: 1px solid #FD553A;
+	border-left: 1px solid #FD553A;
 	color: #FD553A;
 }
 
@@ -280,7 +345,6 @@ article {
 
 .poster {
 	display: inline-block;
-	margin: 8px;
 	text-decoration: none;
 	color: #6F6F6F;
 	text-align: left;
@@ -301,7 +365,7 @@ article {
 	border-radius: 50%;
 	background: #FD553A;
 	font-size: 2rem;
-	line-height: 38px;
+	line-height: 40px;
 	color: #FFFFFF;
 	display: inline-block;
 	text-decoration: none;
@@ -331,7 +395,7 @@ article {
 	text-align: left;
 }
 
-.big_topic:hover h3 {
+.big_topic:hover h4 {
 	color: #FD553A;
 }
 
@@ -350,7 +414,7 @@ article {
 }
 
 .small_news {
-	margin-top: 15px;
+	margin-top: 35px;
 }
 
 .small_topic {
@@ -359,7 +423,6 @@ article {
 	margin-right: 30px;
 	text-decoration: none;
 	color: #008CFF;
-	margin-top: 20px;
 	vertical-align: top;
 }
 
@@ -446,13 +509,17 @@ footer {
 }
 
 .f_m_btns {
-	line-height: 48px;
+	line-height: 30px;
+	list-style: none; 
+	margin: 0; 
+	padding-left: 0; 
 }
 
 .f_m_btns a {
 	display: block;
 	text-decoration: none;
 	color: #FFF;
+	padding: 10px 0; 
 }
 
 .f_m_btn:hover {
@@ -472,14 +539,18 @@ footer p {
 	.in_cinema {
 		width: 790px;
 	}
-	.poster {
+
+	.image {
 	    margin: 8px 8px 40px 8px;
+	}
+
+	.main_text_wrapper {
+		margin-bottom: 100px;
 	}
 
 	.main_text {
 		padding: 65px;
 		background: rgba(0, 0, 0, 0.4); 
-		margin-bottom: 100px;
 	}
 
 	.big_news {
@@ -507,26 +578,23 @@ footer p {
 }
 
 @media screen and (max-width: 878px) {
+	
 	.in_cinema {
 	width: 100%;
 }
 
 @media screen and (max-width: 689px) {
-	
-	header {
-		height: 592px;
+
+	.main_text_wrapper {
+		display: block;
 	}	
 
-	article {
+	section {
 		margin-top: 100px;
 	}
 
 	.in_cinema {
 		width: 525px;
-	}
-
-	.main_text {
-		float: none;
 	}
 
 	.posters {
@@ -537,7 +605,7 @@ footer p {
 		display: none;
 	}
 
-	.poster {
+	.image {
 		margin: 0;
 	}
 
@@ -581,11 +649,15 @@ footer p {
 	}
 
 	h3 {
+		margin: 0;
+	}
+
+	h4 {
 		line-height: 22px;
 		margin: 5px 0;
 	}
 
-	article {
+	section {
 		margin-top: 80px;
 	}
 
@@ -628,7 +700,7 @@ footer p {
 		line-height: 36px;
 	}
 
-	article {
+	section {
 		margin-top: 40px;
 	}
 
@@ -653,13 +725,14 @@ footer p {
 
 @media screen and (max-width: 399px) {
 
-	header {
-		height: 480px;
-	}
 
 	.main_text_wrapper {
 		width: 100%
 	}
+
+	.main_text_wrapper {
+		
+}
 
 	.main_text {
 		padding: 0px 15px 40px;
