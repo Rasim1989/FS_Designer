@@ -57,7 +57,7 @@ h4 {
 
 }
 
-header {
+.header_wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -125,7 +125,7 @@ figcaption {
 	justify-content: space-between;
 }
 
-.header_icons a {
+.header_icons >*:not(:first-child) {
 	margin-left: 24px;
 }
 
@@ -169,8 +169,14 @@ figcaption {
 	margin-bottom: 20px;
 }
 
-.main_text span {
+.main_text p span {
 	font-style: italic;
+	display: block;
+}
+
+.about p span {
+	display: block;
+	font-style: normal;
 }
 
 .main_text h1 span {
@@ -226,6 +232,64 @@ section {
 
 .left_tls {
 	font-size: 2rem;
+}
+
+.custom-select {
+  position: relative;
+  font-size: 1.4rem;
+  display: inline-block;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.custom-select select {
+  display: none; 
+}
+
+.select-selected {
+  background-color: #008CFF;
+}
+
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 8px;
+  right: 14px;
+  border-right: 1px solid #FFF;
+  border-bottom: 1px solid #FFF;
+  width: 7px;
+  height: 7px;
+  transform: rotate(45deg);
+}
+
+.select-selected.select-arrow-active:after {
+  top: 12px;
+  transform: rotate(225deg);
+}
+
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 3px 10px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+.select-items {
+  position: absolute;
+  background-color: #008CFF;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: #FD553A;
 }
 
 .tools_btn_lft {
@@ -401,7 +465,6 @@ section {
 
 .big_topic {
 	display: inline-block;
-	margin-right: 30px;
 	text-decoration: none;
 	color: #6F6F6F;
 	text-align: left;
@@ -409,8 +472,8 @@ section {
 	vertical-align: top;
 }
 
-#last_bn {
-	margin-right: 0;
+.big_news > *:not(:last-child) {
+	margin-right: 30px;
 }
 
 .small_news {
@@ -455,7 +518,7 @@ section {
 	transition: all 0.2s ease-out;
 }
 
-footer {
+.footer_wrapper {
 	margin-top: 128px;
 	display: flex;
 	flex-direction: column;
@@ -505,7 +568,7 @@ footer {
 	transform: rotate(135deg);
 	position: relative;
 	top: 30%;
-	left: 33%;
+	left: 34%;
 }
 
 .f_m_btns {
@@ -526,7 +589,26 @@ footer {
 	color: #FD553A;
 }
 
-footer p {
+.telegram {
+	width: 24px;
+	height: 24px;
+	background: url(../img/Telegram.png) no-repeat center; 
+}
+
+.instagram {
+	width: 24px;
+	height: 24px;
+	background: url(../img/Instagram.png) no-repeat center; 
+    margin: 21px 0;
+}
+
+.vk {
+	width: 24px;
+	height: 24px;
+	background: url(../img/Vk.png) no-repeat center; 
+}
+
+.footer_wrapper p {
 	line-height: 48px;
 	text-align: center;
 }
@@ -562,6 +644,10 @@ footer p {
 		margin: 0 18px 35px;
 	}
 
+	.big_news > *:not(:last-child) {
+		margin-right: 0;
+	}
+
 	.small_news {
 		margin: 15px auto 0;
 		width: 590px;
@@ -582,6 +668,10 @@ footer p {
 	.in_cinema {
 	width: 100%;
 }
+
+.select-items div {
+		padding: 14px 10px;
+	}
 
 @media screen and (max-width: 689px) {
 
@@ -629,15 +719,15 @@ footer p {
 		display: inline-block;
 	}
 
-	#mf_menu {
+	.mf_menu {
 		display: inline-block;
 	}
 
-	#sf_menu {
+	.sf_menu {
 		display: inline-block;
 	}
 
-	#social {
+	.social {
 		display: inline-block;
 	}
 }
@@ -669,6 +759,10 @@ footer p {
 		width: 100%;
 	}
 
+	.custom-select {
+		width: 100px;
+	}
+
 	.news {
 		font-size: 1.7rem;
 		margin-top: 0;
@@ -686,7 +780,11 @@ footer p {
 		font-size: 1.8rem;
 	}
 
-	footer {
+	.arrow_up {
+		top: 35%;
+	}
+
+	.footer_wrapper {
 		margin-top: 60px;
 	}
 }
@@ -716,8 +814,12 @@ footer p {
 		line-height: 23px;
 		padding: 0 40px 40px;
 	}
+
+	.arrow_up {
+		left: 33%;
+	}
 	
-	#sf_menu {
+	.sf_menu {
 		display: none;
 	}
 
@@ -738,6 +840,27 @@ footer p {
 		padding: 0px 15px 40px;
 	}
 
+	.custom-select {
+		width: 87px;
+		margin-left: 0;
+	}
+
+	.select-selected::after {
+		top: 5px;
+	}
+
+	.select-selected.select-arrow-active::after {
+	    top: 9px;
+	}
+
+	.select-selected {
+		padding: 0px 5px;
+	}
+
+	.select-items div {
+		padding: 14px 5px;
+	}
+
 	.poster {
 		width: 170px;
 	}
@@ -746,3 +869,4 @@ footer p {
 		max-width: 100%;
 	}
 }
+
