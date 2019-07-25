@@ -73,10 +73,6 @@ h4 {
 	margin: 8px;
 }
 
-figcaption {
-	text-align: left;
-}
-
 .header_menu {
 	display: flex;
 	justify-content: space-between;
@@ -115,9 +111,17 @@ figcaption {
     margin-top: 20px;
 }
 
-.burger:hover {
+.burger_top:hover:after {
 	background-color: #008CFF;
-	transition: all 0.1s ease-out;
+	transition: all 0.2s ease-out;
+}
+.burger_top:hover:before {
+	background-color: #008CFF;
+	transition: all 0.2s ease-out;
+}
+.burger_top:hover {
+	background-color: #008CFF;
+	transition: all 0.2s ease-out;
 }
 
 .header_icons {
@@ -130,21 +134,39 @@ figcaption {
 }
 
 .menu_search {
-	width: 24px;
-	height: 24px;
+	width: 26px;
+	height: 26px;
 	background: url(../img/search.png) no-repeat center; 
+	transform: scale(0.9);
 }
 
 .menu_calendar {
 	width: 25px;
-	height: 24px;
+	height: 25px;
 	background: url(../img/calendar.png) no-repeat center; 
+	transform: scale(0.9);
 }
 
 .menu_profile {
-	width: 24px;
-	height: 24px;
+	width: 25px;
+	height: 25px;
 	background: url(../img/profile.png) no-repeat center; 
+	transform: scale(0.9);
+}
+
+.menu_search:hover {
+	transform: scale(1);
+	transition: all 0.2s ease-out;
+}
+
+.menu_calendar:hover {
+	transform: scale(1);
+	transition: all 0.2s ease-out;
+}
+
+.menu_profile:hover {
+	transform: scale(1);
+	transition: all 0.2s ease-out;
 }
 
 .main_text_wrapper {
@@ -206,14 +228,14 @@ figcaption {
 	transition: all 0.2s ease-out;
 }
 
-main {
+.main_wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
 }
 
-section {
+.main_wrapper section {
 	margin-top: 128px;
 	display: flex;
 	flex-direction: column;
@@ -414,6 +436,10 @@ section {
 	text-align: left;
 }
 
+.posters figcaption {
+	text-align: left;
+}
+
 .posters_pages {
 	display: inline-flex;
 	justify-content: space-between;
@@ -541,15 +567,6 @@ section {
 	margin-bottom: 20px;
 }
 
-.menu_icons {
-	transform: scale(0.9);
-}
-
-.menu_icons:hover {
-	transform: scale(1);
-	transition: 0.2s;
-}
-
 .circle_up {
 	display: none;
 	width: 40px;
@@ -592,6 +609,12 @@ section {
 	width: 24px;
 	height: 24px;
 	background: url(../img/Telegram.png) no-repeat center; 
+	transform: scale(0.9);
+}
+
+.telegram:hover {
+	transform: scale(1);
+	transition: all 0.2s ease-out;
 }
 
 .instagram {
@@ -599,12 +622,24 @@ section {
 	height: 24px;
 	background: url(../img/Instagram.png) no-repeat center; 
     margin: 21px 0;
+    transform: scale(0.9);
+}
+
+.instagram:hover {
+	transform: scale(1);
+	transition: all 0.2s ease-out;
 }
 
 .vk {
 	width: 24px;
 	height: 24px;
 	background: url(../img/Vk.png) no-repeat center; 
+	transform: scale(0.9);
+}
+
+.vk:hover {
+	transform: scale(1);
+	transition: all 0.2s ease-out;
 }
 
 .footer_wrapper p {
@@ -665,12 +700,14 @@ section {
 @media screen and (max-width: 878px) {
 	
 	.in_cinema {
-	width: 100%;
-}
+		width: 100%;
+    }
 
-.select-items div {
+	.select-items div {
 		padding: 14px 10px;
 	}
+
+}	
 
 @media screen and (max-width: 689px) {
 
@@ -678,7 +715,7 @@ section {
 		display: block;
 	}	
 
-	section {
+	.main_wrapper section {
 		margin-top: 100px;
 	}
 
@@ -746,7 +783,7 @@ section {
 		margin: 5px 0;
 	}
 
-	section {
+	.main_wrapper section {
 		margin-top: 80px;
 	}
 
@@ -797,7 +834,7 @@ section {
 		line-height: 36px;
 	}
 
-	section {
+	.main_wrapper section {
 		margin-top: 40px;
 	}
 
