@@ -86,6 +86,11 @@ h4 {
 	width: 77px;
 }
 
+.burger:hover .burger_top {
+	background-color: #008CFF;
+	transition: all 0.2s ease-out;
+}
+
 .burger_top {
     background-color: #FD553A;
     height: 5px;
@@ -115,10 +120,12 @@ h4 {
 	background-color: #008CFF;
 	transition: all 0.2s ease-out;
 }
+
 .burger_top:hover:before {
 	background-color: #008CFF;
 	transition: all 0.2s ease-out;
 }
+
 .burger_top:hover {
 	background-color: #008CFF;
 	transition: all 0.2s ease-out;
