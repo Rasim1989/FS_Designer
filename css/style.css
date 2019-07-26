@@ -447,6 +447,14 @@ h4 {
 	text-align: left;
 }
 
+.image:hover {
+	color: #FD553A;
+}
+
+.image:hover h3{
+	color: #FD553A;
+}
+
 .posters figcaption {
 	text-align: left;
 }
