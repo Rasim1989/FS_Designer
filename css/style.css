@@ -549,8 +549,8 @@ h4 {
 
 .all_news {
 	display: inline-block;
-	border: 4px solid #FD553A;
-	color: #FD553A;	
+	border: 4px solid #008CFF;
+	color: #008CFF;	
 	font-weight: bold;
 	font-size: 2rem;
 	line-height: 35px;
@@ -561,8 +561,8 @@ h4 {
 }
 
 .all_news:hover {
-	border: 4px solid #008CFF;
-	color: #008CFF;
+	border: 4px solid #FD553A;
+	color: #FD553A;
 	transition: all 0.2s ease-out;
 }
 
